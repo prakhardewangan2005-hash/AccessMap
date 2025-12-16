@@ -1,3 +1,86 @@
+🧩 Problem Statement
+
+Urban navigation systems largely optimize routes for speed and distance, but they often ignore accessibility constraints faced by people with mobility impairments. Pedestrians using wheelchairs, walkers, or strollers frequently encounter steep slopes, missing sidewalks, unsafe crossings, or inaccessible paths that traditional mapping platforms fail to consider.
+
+Additionally, deploying an accessibility-focused routing platform at city scale is technically complex, requiring:
+
+Integration of heterogeneous geospatial datasets
+
+Standardization of pedestrian infrastructure data
+
+Efficient routing graph construction
+
+Scalable deployment across development and production environments
+
+There is a need for a portable, reproducible, and scalable infrastructure that can transform raw pedestrian data into an accessibility-aware routing system and make it easily deployable across different cities.
+
+💡 Solution — AccessMap Deployment Platform
+
+AccessMap provides a containerized, end-to-end deployment infrastructure for an accessibility-aware pedestrian navigation platform. The system converts standardized geospatial data into routable pedestrian networks and serves them through a web-based interactive map interface.
+
+🔧 Key Aspects of the Solution
+1️⃣ Accessibility-Aware Routing
+
+Uses OpenSidewalks-compliant GeoJSON data to represent pedestrian pathways
+
+Incorporates attributes such as slope, connectivity, and path metadata
+
+Builds a routable graph using Unweaver, a flexible pedestrian routing engine
+
+2️⃣ Modular & Scalable Architecture
+
+Separates concerns across:
+
+Frontend (React-based web application)
+
+Routing engine
+
+Map tile generation
+
+User APIs
+
+All components are orchestrated using Docker Compose, ensuring consistent behavior across environments
+
+3️⃣ Automated Build & Deployment Pipeline
+
+Pre-builds critical assets:
+
+Optimized frontend bundles
+
+Vector map tiles
+
+Routing graphs
+
+Enables quick setup using simple CLI commands
+
+Supports development, staging, and production workflows
+
+4️⃣ Configurable & Portable Setup
+
+Environment-based configuration for maximum portability
+
+City-specific deployments supported by simply swapping GeoJSON datasets
+
+Easy migration from local development to cloud or VPS hosting
+
+5️⃣ Privacy-Preserving Analytics 
+
+Integrates a self-hosted analytics service (Rakam)
+
+Gives full control over user data and analytics provenance
+
+Allows opt-in, project-based analytics tracking
+
+🎯 Impact & Outcomes
+
+Enables cities and researchers to deploy accessibility-first navigation systems
+
+Reduces deployment complexity using containerization
+
+Improves reproducibility and maintainability of geospatial systems
+
+Provides a foundation for inclusive urban mobility solutions
+
 # AccessMap
 
 This repo contains all of the infrastructure needed to create and run AccessMap except
