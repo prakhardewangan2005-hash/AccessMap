@@ -124,3 +124,24 @@ AccessMap is deployed using **Docker Compose (v3.8+)** and follows a
 ### Environment Variables
 ```bash
 cp accessmap.env.sample accessmap.env
+## 🚶 Pedestrian Network Data
+
+AccessMap requires the following files inside the `data/` directory:
+
+
+- **transportation.geojson**  
+  Contains pedestrian pathways formatted according to the OpenSidewalks schema.
+
+- **regions.geojson**  
+  Defines service areas and default map view settings for each region.
+
+---
+
+## 🛠️ Building Assets
+
+Run the following commands to build all required assets:
+
+```bash
+docker-compose run build_webapp
+docker-compose run build_tiles
+docker-compose run build_router
