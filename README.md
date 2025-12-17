@@ -43,7 +43,7 @@ There is a need for a **portable, reproducible, and scalable infrastructure** th
 transform raw pedestrian data into an accessibility-aware routing system and make it
 easy to deploy across different cities.
 
-<img width="1333" height="991" alt="image" src="https://github.com/user-attachments/assets/8cea1030-9d57-4e0d-824e-5ec22a62570b" />
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/43f3d115-9735-4ec7-b23f-6099fbf8d880" />
 
 
 
@@ -55,7 +55,7 @@ accessibility-aware pedestrian navigation platform.
 The system converts standardized geospatial data into **routable pedestrian networks**
 and serves them through a **web-based interactive map interface**.
 
-<img width="720" height="520" alt="image" src="https://github.com/user-attachments/assets/6bc370df-6ba3-4192-808b-06c644d9a251" />
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/9b08ed76-b997-4cb2-a5ad-648f1bace5af" />
 
 
  🧩 Key Features
@@ -71,8 +71,6 @@ and serves them through a **web-based interactive map interface**.
 - **Automated build & deploy** for dev → staging → production
 - **Configurable city setup** by swapping datasets
 - **Optional privacy-preserving analytics**
-
-<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/6c4769f4-b1fe-4fa2-93d9-54165f0d6291" />
 
 
 
