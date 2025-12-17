@@ -5,6 +5,9 @@ It builds an accessibility-aware pedestrian graph from OpenSidewalks data and se
 
 
 
+
+
+
 ## 🧩 Problem Statement
 
 Most urban navigation systems optimize routes primarily for **speed and distance**,
@@ -41,6 +44,8 @@ There is a need for a **portable, reproducible, and scalable infrastructure** th
 transform raw pedestrian data into an accessibility-aware routing system and make it
 easy to deploy across different cities.
 
+
+
 <img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/43f3d115-9735-4ec7-b23f-6099fbf8d880" />
 
 
@@ -53,7 +58,12 @@ accessibility-aware pedestrian navigation platform.
 The system converts standardized geospatial data into **routable pedestrian networks**
 and serves them through a **web-based interactive map interface**.
 
+
+
+
 <img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/9b08ed76-b997-4cb2-a5ad-648f1bace5af" />
+
+
 
 
  🧩 Key Features
@@ -88,10 +98,14 @@ Reverse Proxy
 ↓
 Web Application & APIs
 
+
+
+
 <img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/71f542b0-07eb-42e9-9a9e-738c25b7c39b" />
 
 
 ---
+
 
 ## 🚀 Deployment Strategy
 
@@ -102,9 +116,13 @@ AccessMap is deployed using **Docker Compose (v3.8+)** and follows a
 - Stable versions are released using tags  
 - The `develop` branch integrates tested services  
 - Production releases are created by merging `develop` into `master`  
-- The latest tag on `master` reflects the live deployment  
+- The latest tag on `master` reflects the live deployment
+
+
 
 <img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/68f663d6-59d9-4700-8c3b-d528e51e44bb" />
+
+
 
 ---
 
