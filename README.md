@@ -1,10 +1,7 @@
 # 🗺️ AccessMap — Accessibility-Aware Navigation Infrastructure
 
-AccessMap is a **containerized deployment platform** for building and running an
-**accessibility-focused pedestrian navigation system**.  
-This repository contains all the infrastructure and services required to deploy
-AccessMap, excluding raw geospatial data, which can be generated using the
-[`opensidewalks-data`](https://github.com/opensidewalks/opensidewalks-data) pipeline.
+AccessMap helps people navigate cities safely when stairs, curbs, steep slopes, or missing sidewalks exist.
+It builds an accessibility-aware pedestrian graph from OpenSidewalks data and serves step-free routes + warnings + alternatives via a web map and APIs.
 
 ---
 
@@ -17,7 +14,18 @@ Pedestrians using wheelchairs, walkers, or strollers frequently encounter:
 - Steep slopes  
 - Missing or broken sidewalks  
 - Unsafe crossings  
-- Inaccessible pedestrian pathways  
+- Inaccessible pedestrian pathways
+
+  **Success criteria**
+- Provide routes that avoid stairs / unsafe crossings when possible
+- Explain *why* a route is recommended (risk/effort tradeoffs)
+- Reduce route failures (dead-ends, inaccessible entrances) and increase user confidence
+- 
+  **What AccessMap Delivers**
+- **Step-free routing** using accessibility-aware penalties (slope, missing sidewalks, crossings)
+- **Warnings & alternatives** when data is incomplete or risk is high
+- **Web map + APIs** so cities/teams can deploy and iterate quickly
+
 
 Deploying an accessibility-aware routing platform at **city scale** is technically
 challenging due to:
@@ -42,54 +50,25 @@ and serves them through a **web-based interactive map interface**.
 
 ---
 
-## 🔧 Key Features
+## 🧩 Key Features
 
-### 1️⃣ Accessibility-Aware Routing
-- Uses **OpenSidewalks-compliant GeoJSON** data  
-- Considers slope, connectivity, and pathway metadata  
-- Builds routing graphs using **Unweaver**, a flexible pedestrian routing engine  
+### User-facing
+- **Step-free routes** (avoid stairs/unsafe edges where possible)
+- **Warnings + alternatives** when constraints are detected
+- **Explainable steps** so users trust the route decisions
 
-### 2️⃣ Modular & Scalable Architecture
-- Clear separation of concerns:
-  - React-based frontend  
-  - Routing engine  
-  - Map tile generation  
-  - User APIs  
-- All services orchestrated using **Docker Compose**
-
-### 3️⃣ Automated Build & Deployment
-- Pre-builds:
-  - Optimized frontend assets  
-  - Vector map tiles  
-  - Routing graphs  
-- Simple CLI-based setup  
-- Supports **development, staging, and production** workflows  
-
-### 4️⃣ Configurable & Portable Setup
-- Environment-based configuration using `.env` files  
-- City-specific deployments by swapping GeoJSON datasets  
-- Easy migration from local development to cloud or VPS hosting  
-
-### 5️⃣ Privacy-Preserving Analytics (Optional)
-- Integrates a self-hosted **Rakam** analytics service  
-- Full control over data provenance  
-- Opt-in, project-based analytics tracking  
+### Platform
+- **Modular services** (frontend, routing, tiles, APIs)
+- **Docker Compose orchestration** for reproducible deployments
+- **Automated build & deploy** for dev → staging → production
+- **Configurable city setup** by swapping datasets
+- **Optional privacy-preserving analytics**
 
 ---
 
-## 🧩 Related Projects
-
-- **AccessMap Web App (React)**  
-  https://github.com/prakhardewangan2005-hash/AccessMapWebApp  
-
-- **Unweaver — Routing Engine**  
-  https://github.com/nbolten/unweaver  
-
----
 
 ## 🏗️ System Architecture
 
-![AccessMap orchestration diagram](orchestration-diagram.png)
 
 **High-level flow:**
 OpenStreetMap & City Data
@@ -145,3 +124,9 @@ Run the following commands to build all required assets:
 docker-compose run build_webapp
 docker-compose run build_tiles
 docker-compose run build_router
+
+## 📈 Outcomes & Learnings
+- What worked: (e.g., standardized schema enabled consistent routing across datasets)
+- Main challenge: incomplete sidewalk/crossing data → handled via warnings + fallbacks
+- Next steps: improve accessibility scoring, add entrance-level metadata, better slope modeling
+
