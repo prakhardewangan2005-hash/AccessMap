@@ -3,7 +3,7 @@
 AccessMap helps people navigate cities safely when stairs, curbs, steep slopes, or missing sidewalks exist.
 It builds an accessibility-aware pedestrian graph from OpenSidewalks data and serves step-free routes + warnings + alternatives via a web map and APIs.
 
---
+
 
 ## 🧩 Problem Statement
 
@@ -16,13 +16,13 @@ Pedestrians using wheelchairs, walkers, or strollers frequently encounter:
 - Unsafe crossings  
 - Inaccessible pedestrian pathways
 
-  **Success criteria**
+Success criteria
   
 - Provide routes that avoid stairs / unsafe crossings when possible
 - Explain *why* a route is recommended (risk/effort tradeoffs)
 - Reduce route failures (dead-ends, inaccessible entrances) and increase user confidence
-- 
-  **What AccessMap Delivers**
+
+What AccessMap Delivers
   
 - **Step-free routing** using accessibility-aware penalties (slope, missing sidewalks, crossings)
 - **Warnings & alternatives** when data is incomplete or risk is high
@@ -41,7 +41,7 @@ There is a need for a **portable, reproducible, and scalable infrastructure** th
 transform raw pedestrian data into an accessibility-aware routing system and make it
 easy to deploy across different cities.
 
----
+
 
 ## 💡 Solution — AccessMap Platform
 
@@ -50,9 +50,9 @@ accessibility-aware pedestrian navigation platform.
 The system converts standardized geospatial data into **routable pedestrian networks**
 and serves them through a **web-based interactive map interface**.
 
---
 
-## 🧩 Key Features
+
+ 🧩 Key Features
 
 ### User-facing
 - **Step-free routes** (avoid stairs/unsafe edges where possible)
@@ -66,7 +66,7 @@ and serves them through a **web-based interactive map interface**.
 - **Configurable city setup** by swapping datasets
 - **Optional privacy-preserving analytics**
 
----
+
 
 
 ## 🏗️ System Architecture
