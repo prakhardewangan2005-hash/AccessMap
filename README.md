@@ -12,7 +12,7 @@ A “shortest” route isn’t helpful if it ends at a staircase. **AccessMap** 
 - File: [`taginfo.json`](./taginfo.json)
 
 Example:
-```json
+``json
 { "example": true }
 
 
