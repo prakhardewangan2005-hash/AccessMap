@@ -42,7 +42,9 @@ A strong accessibility routing system must:
 > Navigation shouldn’t just find a path—it should build confidence that the path will actually work.
 
 
+
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/90f774b0-66fc-4fae-aae6-8e52fed38d4f" />
+
 
 
 
@@ -72,6 +74,7 @@ AccessMap is an **accessibility-first routing platform** that transforms raw ped
 
 
 
+
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/33ad9771-5f84-46bc-b694-52d88453c684" />
 
 
@@ -94,7 +97,9 @@ AccessMap is an **accessibility-first routing platform** that transforms raw ped
 
 
 
+
 ## 🏗️ System Architecture
+
 
 **High-level flow**
 OpenStreetMap & City Data  
@@ -110,7 +115,9 @@ OpenStreetMap & City Data
 - Keeps routing **fast + explainable** (graph + tiles optimized for serving)
 
 
+
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/81c6a876-f72f-4657-9691-d0282e773c53" />
+
 
 
 
@@ -145,7 +152,10 @@ AccessMap is deployed as a **portable, reproducible city-scale platform** using 
 - **Rollback plan:** revert bundle → restart services  
 
 
+
 <img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/1988cb3d-3ee3-413c-b4c7-8eb99ceaea21" />
+
+
 
 
 ## ⚙️ Configuration
@@ -183,7 +193,10 @@ Keep deployments rollback-friendly by versioning each city as:
 - `metadata.json` (version, build time, sources)
 
 
+
+
 <img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/0259db8e-808b-4e82-9fb3-cb847bbb7227" />
+
 
 
   
@@ -197,7 +210,14 @@ docker-compose run build_tiles
 docker-compose run build_router
 
 
+
+<img width="1700" height="980" alt="accessmap_building_assets_light_infographic_v2" src="https://github.com/user-attachments/assets/c70d34fa-06c0-48af-b01b-cc19f73f9ad4" />
+
+
+
+
 ## Outcomes & Learnings
+
 
 **What worked**
 - Standardizing into an OpenSidewalks-compatible schema enabled consistent routing across heterogeneous city datasets.
@@ -218,4 +238,7 @@ docker-compose run build_router
 -Improve scoring with context-aware weights (city/zone/time sensitivity).
 -Add entrance-level metadata to reduce last-meter failures.
 -Strengthen slope modeling (smoothing + effort estimation) for realistic accessibility routing.
+
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/5d276888-a255-48dd-bb76-5690d2afd7e8" />
+
 
