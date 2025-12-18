@@ -112,7 +112,9 @@ Web Application & APIs
 
 
 
-<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/71f542b0-07eb-42e9-9a9e-738c25b7c39b" />
+[Download the System Architecture image](sandbox:/mnt/data/accessmap_system_architecture_infographic.png)
+
+
 
 
 ---
