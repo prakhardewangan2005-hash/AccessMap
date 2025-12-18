@@ -1,8 +1,6 @@
 # 🗺️ AccessMap — Accessibility-Aware Navigation Infrastructure
 
-AccessMap helps people navigate cities safely when stairs, curbs, steep slopes, or missing sidewalks exist.
-It builds an accessibility-aware pedestrian graph from OpenSidewalks data and serves step-free routes + warnings + alternatives via a web map and APIs.
-
+For many people, one staircase or a missing curb ramp can turn a simple walk into a dead end. AccessMap turns sidewalk accessibility data (OpenSidewalks) into an **accessibility-first pedestrian network** that prioritizes *real-world usability* over “fastest.” It delivers **step-free routing**, **risk/constraint warnings** (slopes, curbs, gaps), and **practical route trade-offs** through a web map and APIs—so navigation works for wheelchairs, strollers, walkers, travelers, and anyone who wants low-stress routes.
 
 
 
