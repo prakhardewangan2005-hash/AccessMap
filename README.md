@@ -42,35 +42,54 @@ A solution should:
 
 
 
-
 ## 💡 Solution — AccessMap Platform
+*How AccessMap converts city pedestrian data into clear, step-free routes.*
 
-AccessMap provides an **end-to-end, Docker-based deployment infrastructure** for an
-accessibility-aware pedestrian navigation platform.  
-The system converts standardized geospatial data into **routable pedestrian networks**
-and serves them through a **web-based interactive map interface**.
+AccessMap is an accessibility-first routing platform that turns raw pedestrian infrastructure data into an **explainable routing graph**—and serves **step-free routes** with **warnings + alternatives** when constraints or uncertainty appear.
+
+### Data → Graph → Routes (explainable)
+
+**1) Data (Ingest + Normalize)**
+- OpenSidewalks sidewalk metadata (sidewalk segments, curb ramps, connectivity)
+- Elevation/slope signals
+- Crossings + risk signals (where available)
+
+**2) Routing Graph (Accessibility-aware)**
+- Standardizes heterogeneous city datasets into a walkable network
+- Applies **accessibility penalties** (stairs, steep slopes, unsafe crossings, missing sidewalks)
+- Generates **confidence + explainability** signals for “why this route”
+
+**3) Routes (User-facing outputs)**
+- **Step-free routing** (avoid stairs/unsafe edges when possible)
+- **Route explanations** (risk/effort tradeoffs, confidence)
+- **Warnings + alternatives** when constraints are detected or data is incomplete
+- **Web map UI + APIs** so teams can deploy, integrate, and iterate quickly
 
 
 
 
-<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/9b08ed76-b997-4cb2-a5ad-648f1bace5af" />
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/33ad9771-5f84-46bc-b694-52d88453c684" />
 
 
 
 
- 🧩 Key Features
+
+
+ ## 🧩 Key Features
 
 ### User-facing
-- **Step-free routes** (avoid stairs/unsafe edges where possible)
-- **Warnings + alternatives** when constraints are detected
-- **Explainable steps** so users trust the route decisions
+- **Step-free routes** (accessibility-first defaults, constraint-aware)
+- **Warnings + alternatives** when constraints are detected or confidence is low
+- **Explainable routing** so users trust decisions (why + tradeoffs)
 
 ### Platform
 - **Modular services** (frontend, routing, tiles, APIs)
 - **Docker Compose orchestration** for reproducible deployments
 - **Automated build & deploy** for dev → staging → production
-- **Configurable city setup** by swapping datasets
-- **Optional privacy-preserving analytics**
+- **Configurable city setup** by swapping datasets/configs
+- **Optional privacy-preserving analytics** for monitoring and iteration
+
 
 
 
