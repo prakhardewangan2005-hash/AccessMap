@@ -8,39 +8,33 @@ For many people, one staircase or a missing curb ramp can turn a simple walk int
 
 ## 🧩 Problem Statement
 
-Most urban navigation systems optimize routes primarily for **speed and distance**,
-often ignoring **accessibility constraints** faced by people with mobility impairments.
-Pedestrians using wheelchairs, walkers, or strollers frequently encounter:
+Most navigation products optimize for **speed and distance**, not **real-world walkability**. For millions of pedestrians, a “short route” can fail in the last 200 meters—because the path includes **stairs, missing curb ramps, broken sidewalks, unsafe crossings, or steep grades**.
 
-- Steep slopes  
-- Missing or broken sidewalks  
-- Unsafe crossings  
-- Inaccessible pedestrian pathways
+For people using wheelchairs, walkers, strollers, carrying luggage, or managing pain/fatigue, these barriers create:
 
-Success criteria
-  
-- Provide routes that avoid stairs / unsafe crossings when possible
-- Explain *why* a route is recommended (risk/effort tradeoffs)
-- Reduce route failures (dead-ends, inaccessible entrances) and increase user confidence
+- **Route failures** (dead-ends, inaccessible entrances, forced backtracking)
+- **Safety risk** (unmarked crossings, steep slopes, uneven surfaces)
+- **Cognitive load + anxiety** (uncertainty: *“Will I get stuck?”*)
+- **Reduced independence** (needing help, avoiding unfamiliar areas)
 
-What AccessMap Delivers
-  
-- **Step-free routing** using accessibility-aware penalties (slope, missing sidewalks, crossings)
-- **Warnings & alternatives** when data is incomplete or risk is high
-- **Web map + APIs** so cities/teams can deploy and iterate quickly
+### Why existing systems fail
+Accessibility constraints are **not consistently represented** in mainstream pedestrian graphs. Sidewalk data is often **incomplete, fragmented, and inconsistent across cities**, and routing engines rarely explain *why* a route is recommended or what tradeoffs were made.
+
+### Success Criteria
+A solution should:
+- **Prioritize accessibility-first routing** (avoid stairs/unsafe crossings when possible; respect slope/curb constraints)
+- **Explain decisions** with transparent *risk/effort tradeoffs* and confidence signals
+- **Provide safe fallbacks** when data is missing (warnings + alternates, not silent failure)
+- **Scale across cities** with a portable, reproducible infrastructure for ingesting and standardizing pedestrian data
+
+### What AccessMap Delivers
+- **Step-free routing** using accessibility-aware penalties (slope, missing sidewalks, crossings, stairs)
+- **Warnings + alternatives** when confidence is low or risk is high
+- **Web map + APIs** so cities/teams can deploy, iterate, and integrate accessible navigation quickly
 
 
-Deploying an accessibility-aware routing platform at **city scale** is technically
-challenging due to:
+> Designing navigation that doesn’t just find a route — it builds confidence that the route will actually work.
 
-- Integration of heterogeneous geospatial datasets  
-- Standardization of pedestrian infrastructure data  
-- Efficient routing graph construction  
-- Scalable deployment across development and production environments  
-
-There is a need for a **portable, reproducible, and scalable infrastructure** that can
-transform raw pedestrian data into an accessibility-aware routing system and make it
-easy to deploy across different cities.
 
 
 
