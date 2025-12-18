@@ -112,68 +112,147 @@ Web Application & APIs
 
 
 
-[Download the System Architecture image](sandbox:/mnt/data/accessmap_system_architecture_infographic.png)
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/81c6a876-f72f-4657-9691-d0282e773c53" />
 
 
 
 
----
-
-
-## 🚀 Deployment Strategy
-
-AccessMap is deployed using **Docker Compose (v3.8+)** and follows a
-**development → staging → production** workflow:
-
-- Features are developed and tested independently  
-- Stable versions are released using tags  
-- The `develop` branch integrates tested services  
-- Production releases are created by merging `develop` into `master`  
-- The latest tag on `master` reflects the live deployment
 
 
 
-<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/68f663d6-59d9-4700-8c3b-d528e51e44bb" />
+ ## 🚀 Deployment Strategy
+AccessMap is deployed as a **portable, reproducible city-scale platform** using **Docker Compose (v3.8+)**, designed to move safely from local development to production without “it works on my machine” failures.
+
+### Goals
+- **Repeatable deployments** across machines and cities
+- **Fast iteration** (change data/config, redeploy quickly)
+- **Production reliability** (stable routing + tiles + APIs)
+- **Scalable onboarding** (swap datasets to support a new city)
+
+### Environments
+**Dev → Staging → Production**
+- **Dev:** rapid local testing, hot reload, fast debugging
+- **Staging:** production-like config, smoke tests, performance checks
+- **Production:** hardened services, caching, monitoring, stable releases
+
+### Containerized Services (Compose)
+- **Frontend (React):** map UI + route exploration
+- **Routing service:** accessibility-aware pathfinding + explanations
+- **Tiles/Graph service:** serves vector tiles + routing graph artifacts
+- **Reverse proxy (gateway):** routing, TLS termination, caching, rate limits
+- *(Optional)* **Analytics:** privacy-preserving usage signals for iteration
+
+### Data & Build Pipeline
+1. **Ingest:** OpenStreetMap + city datasets + elevation
+2. **ETL & Standardize:** convert to **OpenSidewalks schema** (GeoJSON)
+3. **Build artifacts:** routing graph + vector tiles
+4. **Deploy:** publish artifacts to services, restart only what changed
+
+### Release & Safety
+- **Versioned city bundles** (data + configs) for rollback
+- **Health checks** on all services (compose-level readiness)
+- **Zero-surprise upgrades:** pinned images + controlled updates
+- **Rollback plan:** revert to previous city bundle + restart gateway/services
+
+### Why this matters (UX impact)
+Reliable deployment isn’t just engineering polish—it ensures users get:
+- **Consistent step-free routing**
+- **Predictable warnings + alternatives**
+- **Stable performance** at city scale
 
 
 
----
+
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/1988cb3d-3ee3-413c-b4c7-8eb99ceaea21" />
+
+
+
+
+
 
 ## ⚙️ Configuration
+AccessMap is designed to be **city-portable**: you can onboard a new city by swapping datasets + a small set of configuration values—without rewriting the platform. Configuration controls **how accessibility is interpreted**, **how routes are scored**, and **how the system behaves when data is incomplete**.
 
-### Environment Variables
-```bash
-cp accessmap.env.sample accessmap.env
-## 🚶 Pedestrian Network Data
+### What you can configure (high-impact)
+**Routing behavior**
+- **Constraint mode:** step-free / avoid stairs / slope-sensitive
+- **Penalty weights:** stairs, steep slope, unsafe crossings, missing sidewalks
+- **Preference tuning:** prioritize safety vs. distance vs. effort
 
-AccessMap requires the following files inside the `data/` directory:
+**Data quality + trust**
+- **Confidence thresholds:** when to show a warning vs. failover route
+- **Missing-data behavior:** conservative detours vs. “best available” route
+- **Feature toggles:** enable/disable crossing risk, curb-ramp requirement, etc.
+
+**City onboarding**
+- **Dataset paths/URLs:** OpenStreetMap extract + city datasets + elevation tiles
+- **ETL parameters:** schema mapping to OpenSidewalks, normalization rules
+- **Region bounds:** city polygon/tiles coverage, clipping + caching settings
+
+**Platform & API**
+- **Reverse proxy rules:** routing, caching, rate limits, request timeouts
+- **Service endpoints:** routing/tiles/frontend base URLs
+- **Environment flags:** dev/staging/prod values, logging levels
+
+### Recommended “city bundle” pattern
+To keep deployments clean and rollback-friendly, store each city as a **versioned bundle**:
+
+- `data/` (raw + processed inputs)
+- `config/` (penalty weights, thresholds, toggles)
+- `artifacts/` (routing graph + vector tiles)
+- `metadata.json` (version, build time, sources)
+
+This enables:
+- **Fast city switching**
+- **Reproducible builds**
+- **Safe rollbacks** (revert to previous bundle)
+
+### Why this matters (UX impact)
+Configuration is not just technical setup—it directly affects user trust:
+- **Fewer route failures**
+- **More predictable warnings**
+- **Consistent step-free experiences** across different cities and data quality levels
 
 
-- **transportation.geojson**  
-  Contains pedestrian pathways formatted according to the OpenSidewalks schema.
-
-- **regions.geojson**  
-  Defines service areas and default map view settings for each region.
-
-<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/e2a43e44-b94d-4c54-8f95-e50c2b2d8200" />
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/0259db8e-808b-4e82-9fb3-cb847bbb7227" />
 
 
----
+
+
+
 
 ## 🛠️ Building Assets
 
 Run the following commands to build all required assets:
 
-```bash
+bash
 docker-compose run build_webapp
 docker-compose run build_tiles
 docker-compose run build_router
 
-<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/7a1a6259-7a71-4787-8138-26906b280e44" />
+https://giant-pantydraco-31a.notion.site/Study-Planner-2cb2674354cb8059b86bfd089e2634f5?source=copy_link
 
 
-## 📈 Outcomes & Learnings
-- What worked: (e.g., standardized schema enabled consistent routing across datasets)
-- Main challenge: incomplete sidewalk/crossing data → handled via warnings + fallbacks
-- Next steps: improve accessibility scoring, add entrance-level metadata, better slope modeling
+## ✅ Outcomes & Learnings
+
+### What worked
+- Standardizing everything into an **OpenSidewalks-compatible schema** unlocked **consistent routing** across messy, heterogeneous city datasets.
+- **Accessibility-aware costs** (stairs / slope / crossings / missing sidewalks) produced **safer default routes** instead of “shortest-only” decisions.
+- Adding **explainability** (“why this route”) improved user trust by making tradeoffs visible (effort vs. distance vs. risk).
+
+### Main challenge
+- **Incomplete sidewalk + crossing coverage** in real-world data caused gaps, dead-ends, and edge-cases in routing.
+- **Noisy / missing tags** (e.g., curb-ramp signals, entrance accessibility, temporary barriers) created uncertainty that typical navigation ignores.
+- A single incorrect edge choice can lead to **unsafe detours** or **loss of independence** for mobility-impaired users.
+
+### How we handled it
+- Introduced **warnings + confidence cues** when data is incomplete or risk is high (no silent failures).
+- Returned **fallback routes + alternatives** rather than forcing one “best” path.
+- Used **conservative penalties** to avoid uncertain/unsafe edges by default while still allowing discovery when necessary.
+
+### Next steps
+- Improve **accessibility scoring** with context-aware weights (city/zone/time sensitivity).
+- Add **entrance-level metadata** (accessible entrances, curb ramps, barriers) to reduce last-meter failures.
+- Build **better slope modeling** (elevation smoothing + effort estimation) for more realistic accessibility routing.
+
 
