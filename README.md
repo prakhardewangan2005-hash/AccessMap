@@ -7,6 +7,15 @@ A “shortest” route isn’t helpful if it ends at a staircase. **AccessMap** 
 - 🔎 Explainable decisions (why this route + trade-offs)  
 - 🧩 City-portable infrastructure (swap datasets/configs, redeploy fast)
 
+ 
+**    **
+- File: [`taginfo.json`](./taginfo.json)
+
+Example:
+```json
+{ "example": true }
+
+
 
 ## 🧩 Problem Statement
 
