@@ -37,8 +37,8 @@ A solution should:
 
 
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/90f774b0-66fc-4fae-aae6-8e52fed38d4f" />
 
-<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/43f3d115-9735-4ec7-b23f-6099fbf8d880" />
 
 
 
