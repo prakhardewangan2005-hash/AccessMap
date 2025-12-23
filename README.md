@@ -13,6 +13,15 @@ A “shortest” route isn’t helpful if it ends at a staircase. **AccessMap** 
 - Prototype & High-Fidelity UI Link:
    https://www.figma.com/design/5lvOC2vJ5BTFLxtgBJaiVM/Access-Map?node-id=0-1&t=jZ7IHGOJJarDRuVp-1
 - FUSION-360 (3D Model) Link :
+   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<model-viewer
+  src="PASTE_YOUR_GLB_URL_HERE"
+  camera-controls
+  auto-rotate
+  ar
+  style="width:100%;height:720px;background:transparent;">
+</model-viewer>
+
    
 
   
