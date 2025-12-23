@@ -13,35 +13,20 @@ A “shortest” route isn’t helpful if it ends at a staircase. **AccessMap** 
 - Prototype & High-Fidelity UI Link:
    https://www.figma.com/design/5lvOC2vJ5BTFLxtgBJaiVM/Access-Map?node-id=0-1&t=jZ7IHGOJJarDRuVp-1
 - FUSION-360 (3D Model) Link :
-  
-<div class="fs-wrap">
-  <img
-    class="fs-img"
-    src="PASTE_IMAGE_URL_HERE"
-    alt="AccessMap Tools Model Screenshot"
-    loading="lazy"
-  />
-</div>
-
-<style>
-  html, body { margin: 0; padding: 0; height: 100%; }
-  .fs-wrap{
-    width: 100vw;
-    height: 100vh;
-    background: #0b0d12;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  /* FULL SCREEN without cropping (best for screenshots) */
-  .fs-img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* change to cover if you want crop + full fill */
-    display: block;
-  }
-</style>
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    html,body{margin:0;height:100%;background:#0b0d12;}
+    img{width:100vw;height:100vh;object-fit:contain;display:block;}
+  </style>
+</head>
+<body>
+  <img src="tools-model.png" alt="AccessMap Tools Model"/>
+</body>
+</html>
 
 
 
