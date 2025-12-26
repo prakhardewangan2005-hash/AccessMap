@@ -3,7 +3,6 @@
 Accessibility-first routing concept focused on clarity, trust cues, and real-world constraints.
 
 ## Quick Links
-**    **
 **Case Study (Notion):**  
 **Json code:**  [`taginfo.json`](./taginfo.json)
 **Figma Prototype & High-Fidelity UI Link:**
