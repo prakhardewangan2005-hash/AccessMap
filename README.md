@@ -12,7 +12,7 @@ Accessibility-first routing concept focused on clarity, trust cues, and real-wor
 
 
 
-## Why it matters (30-sec skim)
+## Why it matters 
 - **Core experience design:** Search → route options → step-free filters → guidance (state-ready UI)
 - **Customer outcomes (VOC):** Decision clarity with trust cues (what to expect + fallback options)
 - **Future-lab mindset:** Scalable accessibility taxonomy + constraints → documented insights (not just demos)
