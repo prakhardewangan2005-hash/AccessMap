@@ -21,6 +21,12 @@ https://giant-pantydraco-31a.notion.site/Access-Map-Repo-2d52674354cb808b921deee
 **3D Tools Model (Fusion 360):**
  https://github.com/user-attachments/assets/5b2a9f57-8495-41ee-a8e7-a335377834c2
 
+
+ ## Proof Docs
+- Case Study (Repo): [docs/00-case-study.md](docs/00-case-study.md)
+- JD Alignment: [docs/07-jd-alignment.md](docs/07-jd-alignment.md)
+
+
 ---
 
 ## Problem
