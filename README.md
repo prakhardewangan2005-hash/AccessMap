@@ -26,6 +26,13 @@ https://giant-pantydraco-31a.notion.site/Access-Map-Repo-2d52674354cb808b921deee
 - Case Study (Repo): [docs/00-case-study.md](docs/00-case-study.md)
 - JD Alignment: [docs/07-jd-alignment.md](docs/07-jd-alignment.md)
 
+  ## Artifacts
+- IA + Taxonomy: [docs/02-ia-taxonomy.md](docs/02-ia-taxonomy.md)
+- Prototype Specs: [docs/03-prototype-specs.md](docs/03-prototype-specs.md)
+- Data Tags (JSON): [data/taginfo.json](data/taginfo.json)
+- Orchestration Diagram (PNG): [assets/diagrams/orchestration-diagram.png](assets/diagrams/orchestration-diagram.png)
+
+
 
 ---
 
