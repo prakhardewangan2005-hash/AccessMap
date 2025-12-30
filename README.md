@@ -31,7 +31,9 @@ https://giant-pantydraco-31a.notion.site/Access-Map-Repo-2d52674354cb808b921deee
 - Prototype Specs: [docs/03-prototype-specs.md](docs/03-prototype-specs.md)
 - Data Tags (JSON): [data/taginfo.json](data/taginfo.json)
 - Orchestration Diagram (PNG): [assets/diagrams/orchestration-diagram.png](assets/diagrams/orchestration-diagram.png)
-- - Changelog: [CHANGELOG.md](CHANGELOG.md)
+- Changelog: [CHANGELOG.md](CHANGELOG.md)
+- Accessibility Audit: [docs/04-accessibility-audit.md](docs/04-accessibility-audit.md)
+
 
 
 
