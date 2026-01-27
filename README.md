@@ -85,16 +85,6 @@ Mainstream maps often fail to reliably express accessibility. Users face:
 
 ---
 
-## JD Alignment (Weighted blend across 6 roles)
-This project intentionally demonstrates:
-- **Amazon Music UX:** iteration, prototyping, design systems, cross-functional collaboration
-- **Microsoft Design Intern (0–1 lab):** experimentation mindset + prototype storytelling
-- **Microsoft Product Design:** end-to-end UX, accessibility, balancing tradeoffs
-- **Microsoft Content Design:** taxonomy, naming, information architecture, messaging hierarchy
-- **Google Product Design Engineer signals:** real-world constraints, structured systems thinking, prototype-to-scale mindset
-
----
-
 ## License
 MIT
 
